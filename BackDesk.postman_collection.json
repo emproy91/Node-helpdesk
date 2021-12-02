@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "4442aa52-4823-43ba-81bc-364097137cfd",
+		"name": "BackDesk",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Usuarios",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE1OTZhZTM5OWM0ZjMyMmNmZTVlMDkiLCJpYXQiOjE2Mzg0MTg0MzcsImV4cCI6MTYzODQ2MTYzN30.eUGmDDjBuEPhhXgQwAJkyEqXPhxOXsSPQT_o7jUcG_Q",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuarios"
+					]
+				},
+				"description": "trae por get los usuarios y por Post crear usuarios."
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Usuarios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Nairo\",\n    \"password\": \"123456\",\n    \"email\": \"nairo@helpdesk.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuarios"
+					]
+				},
+				"description": "trae por get los usuarios y por Post crear usuarios."
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Usuario",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE4MDEwMTA5MTE1ZmIyNzdlODUzODYiLCJpYXQiOjE2Mzg0MjAyMDUsImV4cCI6MTYzODQ2MzQwNX0.C1Ts0ua_LSkb2xC5LmkxrAdIZFA1nvpnP-vY5KcsQEE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Nairo Rosas\",\n    \"password\": \"123456\",\n    \"google\": \"true\",\n    \"email\": \"nairo@helpdesk.com\",\n    \"role\": \"USER_ROLE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/usuarios/61a8010109115fb277e85386",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuarios",
+						"61a8010109115fb277e85386"
+					]
+				},
+				"description": "trae por get los usuarios y por Post crear usuarios."
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE1OTZhZTM5OWM0ZjMyMmNmZTVlMDkiLCJpYXQiOjE2Mzg0MTk2NjIsImV4cCI6MTYzODQ2Mjg2Mn0.9y98h84USGDOTfuP9Uc7cS55q7teyJHxSw6btu4oXVI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/usuarios/61a596ae399c4f322cfe5e09",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuarios",
+						"61a596ae399c4f322cfe5e09"
+					]
+				},
+				"description": "trae por get los usuarios y por Post crear usuarios."
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"123456\",\n    \"email\": \"nairo@helpdesk.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				},
+				"description": "trae por get los usuarios y por Post crear usuarios."
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
