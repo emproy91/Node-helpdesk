@@ -4,7 +4,7 @@ const mongoose = require ('mongoose');
 const dbConnection = async() => {
 
     try {
-        await mongoose.connect( process.env.DB_CNN , {
+        await mongoose.connect( process.env.DB_CNN, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             // useCreateIndex: true // Ya viene por defecto.
@@ -12,7 +12,8 @@ const dbConnection = async() => {
         console.log('DB Online');
     } catch (error) {
         console.log(error);
-        throw new Error('Error iniciando BD, ver logs');
+        throw Error('Error iniciando BD, ver logs');
+        /* si no carga la BD Atlas hay que agregar la ip en Atlas https://www.youtube.com/watch?v=qFSpJX0c2QU */
     }
 
 }

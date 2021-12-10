@@ -8,19 +8,25 @@
 		{
 			"name": "GET Usuarios",
 			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {}
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"host": true,
+					"user-agent": true
+				}
 			},
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE1OTZhZTM5OWM0ZjMyMmNmZTVlMDkiLCJpYXQiOjE2Mzg0MTg0MzcsImV4cCI6MTYzODQ2MTYzN30.eUGmDDjBuEPhhXgQwAJkyEqXPhxOXsSPQT_o7jUcG_Q",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE4MDEwMTA5MTE1ZmIyNzdlODUzODYiLCJpYXQiOjE2MzkxNTY0MDksImV4cCI6MTYzOTE5OTYwOX0.vDU5Itx6OsQcIigXLkSl-3cQfacsNk6LP16mGsKR9T4",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3000/api/usuarios",
+					"raw": "http://localhost:3000/api/usuarios?desde=5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -29,6 +35,12 @@
 					"path": [
 						"api",
 						"usuarios"
+					],
+					"query": [
+						{
+							"key": "desde",
+							"value": "5"
+						}
 					]
 				},
 				"description": "trae por get los usuarios y por Post crear usuarios."
@@ -42,7 +54,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"nombre\": \"Nairo\",\n    \"password\": \"123456\",\n    \"email\": \"nairo@helpdesk.com\"\n}",
+					"raw": "{\n    \"nombre\": \"test15\",\n    \"password\": \"123456\",\n    \"email\": \"test15@helpdesk.com\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -163,6 +175,337 @@
 					"path": [
 						"api",
 						"login"
+					]
+				},
+				"description": "trae por get los usuarios y por Post crear usuarios."
+			},
+			"response": []
+		},
+		{
+			"name": "Busqueda total",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE4MDEwMTA5MTE1ZmIyNzdlODUzODYiLCJpYXQiOjE2MzkxNTY0MDksImV4cCI6MTYzOTE5OTYwOX0.vDU5Itx6OsQcIigXLkSl-3cQfacsNk6LP16mGsKR9T4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "imagen",
+							"type": "file",
+							"src": "/home/ipecas/Pictures/miniCrewDragon.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/todo/r",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todo",
+						"r"
+					]
+				},
+				"description": "trae por get los usuarios y por Post crear usuarios."
+			},
+			"response": []
+		},
+		{
+			"name": "Busqueda por colección",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE4MDEwMTA5MTE1ZmIyNzdlODUzODYiLCJpYXQiOjE2MzkwOTYwNzksImV4cCI6MTYzOTEzOTI3OX0.gi74q-jQzzeo5UOD8_DXNU2hJTGug1Gx2sv1NHctzyk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/todo/coleccion/contratos/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todo",
+						"coleccion",
+						"contratos",
+						"2"
+					]
+				},
+				"description": "trae por get los usuarios y por Post crear usuarios."
+			},
+			"response": []
+		},
+		{
+			"name": "Subir archivo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE4MDEwMTA5MTE1ZmIyNzdlODUzODYiLCJpYXQiOjE2MzkxNTY0MDksImV4cCI6MTYzOTE5OTYwOX0.vDU5Itx6OsQcIigXLkSl-3cQfacsNk6LP16mGsKR9T4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "imagen",
+							"type": "file",
+							"src": "/home/ipecas/Pictures/imgTest/5e60027c468d8f1b68798ee8-699.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/upload/contratos/61aaafc28227aebed6e74376",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"upload",
+						"contratos",
+						"61aaafc28227aebed6e74376"
+					]
+				},
+				"description": "trae por get los usuarios y por Post crear usuarios."
+			},
+			"response": []
+		},
+		{
+			"name": "Ver imagen",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE4MDEwMTA5MTE1ZmIyNzdlODUzODYiLCJpYXQiOjE2MzkxNTY0MDksImV4cCI6MTYzOTE5OTYwOX0.vDU5Itx6OsQcIigXLkSl-3cQfacsNk6LP16mGsKR9T4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "imagen",
+							"type": "file",
+							"src": "/home/ipecas/Pictures/imgTest/5e60027c468d8f1b68798ee8-699.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/upload/equipos/814cff7f-8b2a-481a-8370-62ec63de688d.jpeg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"upload",
+						"equipos",
+						"814cff7f-8b2a-481a-8370-62ec63de688d.jpeg"
+					]
+				},
+				"description": "trae por get los usuarios y por Post crear usuarios."
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Contrato",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"host": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE4MDEwMTA5MTE1ZmIyNzdlODUzODYiLCJpYXQiOjE2Mzg1NjU1MjQsImV4cCI6MTYzODYwODcyNH0.XQ-J_-48dD3kH7ketK_obnOnuYs-pDo15-g1yrz-_tU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"numero_contrato\": \"2222\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/contratos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"contratos"
+					]
+				},
+				"description": "trae por get los usuarios y por Post crear usuarios."
+			},
+			"response": []
+		},
+		{
+			"name": "GET Contratos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"host": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE4MDEwMTA5MTE1ZmIyNzdlODUzODYiLCJpYXQiOjE2Mzg1NjU1MjQsImV4cCI6MTYzODYwODcyNH0.XQ-J_-48dD3kH7ketK_obnOnuYs-pDo15-g1yrz-_tU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/contratos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"contratos"
+					]
+				},
+				"description": "trae por get los usuarios y por Post crear usuarios."
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Equipo",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"host": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE4MDEwMTA5MTE1ZmIyNzdlODUzODYiLCJpYXQiOjE2Mzg1NjU1MjQsImV4cCI6MTYzODYwODcyNH0.XQ-J_-48dD3kH7ketK_obnOnuYs-pDo15-g1yrz-_tU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"torre\",\n    \"contrato\": \"61aaafc28227aebed6e74376\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/equipos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"equipos"
+					]
+				},
+				"description": "trae por get los usuarios y por Post crear usuarios."
+			},
+			"response": []
+		},
+		{
+			"name": "GET Equipos",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"host": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE1OTZhZTM5OWM0ZjMyMmNmZTVlMDkiLCJpYXQiOjE2Mzg0MTk2NjIsImV4cCI6MTYzODQ2Mjg2Mn0.9y98h84USGDOTfuP9Uc7cS55q7teyJHxSw6btu4oXVI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/equipos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"equipos"
 					]
 				},
 				"description": "trae por get los usuarios y por Post crear usuarios."

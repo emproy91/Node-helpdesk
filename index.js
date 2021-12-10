@@ -25,7 +25,11 @@ const { dbConnection } = require('./database/config')
 
  // Rutas.
  app.use('/api/usuarios', require('./routes/usuarios'));
+ app.use('/api/contratos', require('./routes/contratos'));
+ app.use('/api/equipos', require('./routes/equipos'));
  app.use('/api/login', require('./routes/auth'));
+ app.use('/api/todo', require('./routes/busquedas'));
+ app.use('/api/upload', require('./routes/uploads'));
 
  /*
  app.get( '/', (req, res) => {
