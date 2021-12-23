@@ -1,7 +1,9 @@
 const { response } = require('express');
-const usuario = require('../models/usuario');
+const Usuario = require('../models/usuario');
 const becrypt = require('bcryptjs');
+
 const { generarJWT } = require('../helpers/jwt');
+const { googleVerify } = require('../helpers/google-verify');
 
 const login = async (req, res) => {
     
@@ -58,6 +60,61 @@ const login = async (req, res) => {
     }
 }
 
+const googleSignIn = async( req, res = response ) => {
+
+    const googleToken = req.body.token;
 
 
-module.exports = { login }
+    try {
+
+        const { name, email, picture } = await googleVerify( googleToken );
+
+        const usuarioDB = await Usuario.findOne({ email });
+        let usuario;
+
+        if  ( !usuarioDB ) {
+            // si no existe el usuario
+            usuario = new Usuario({
+                nombre: name,
+                email,
+                password: '@@@@',
+                img: picture,
+                google: true
+            });
+        } else {
+            // existe usuario
+            usuario = usuarioDB;
+            // Fué un usuario con contraseña y ahora va a ser de google.
+            usuario.google = true;
+            // Si se deja la siguiente linea no se cambia la contraseña y el usuario tendrá los 2 métodos de autenticación.
+            // usuario.password = '@@@@'; 
+            // Si se comenta la anterior linea el usuario pierde el metodo de autenticación por contraseña.
+        }
+
+        //Guardar en DB 
+        await usuario.save();
+
+        // Generar el TOKEN - JWT
+        const token = await generarJWT( usuario.id );
+
+        res.json({
+            ok: true,
+            // msg: 'Google signin',
+            // name, email, picture
+            token
+        });
+        
+    } catch (error) {
+
+        res.status(401).json({
+            ok: false,
+            msg: 'Token no es correcto',
+        });
+        
+    }
+
+}
+
+
+
+module.exports = { login, googleSignIn }

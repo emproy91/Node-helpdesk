@@ -182,6 +182,37 @@
 			"response": []
 		},
 		{
+			"name": "Login Google",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6ImQ5OGY0OWJjNmNhNDU4MWVhZThkZmFkZDQ5NGZjZTEwZWEyM2FhYjAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiMzg2NTQxOTcyODk3LWUwMG5pbXMzdnVxYm5zcnU3dnMwazBhM3RpMDF1Zm0yLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMzg2NTQxOTcyODk3LWUwMG5pbXMzdnVxYm5zcnU3dnMwazBhM3RpMDF1Zm0yLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTA3MTgwNjIwMTQwODI3Mzg5NTQ0IiwiZW1haWwiOiJlbXByb3k5MUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IlA2T3VXZUt1RHRCYU05ck5DTDlwTUEiLCJuYW1lIjoiTWF1cmljaW8gUMOpcmV6IiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hLS9BT2gxNEdoek95aEN5ZlZEOVNMTVVhR0I5SHBFZWloQ2NKYWJfcU1IenZycj1zOTYtYyIsImdpdmVuX25hbWUiOiJNYXVyaWNpbyIsImZhbWlseV9uYW1lIjoiUMOpcmV6IiwibG9jYWxlIjoiZXMtNDE5IiwiaWF0IjoxNjQwMjIzODU3LCJleHAiOjE2NDAyMjc0NTcsImp0aSI6ImRiZDUxOTNkZDhhNTI2NWRmNjk1ZWE5OGQ3ODE2NmJmMzRkOTc0ZDQifQ.cqIdIfBsyW23L2DMKl3OSGg-XnDuptih7gv3dayYsW1SKTorhiCnCyy62WYYC4FiQmkr-KhbWG2tQvQ6FhqenDpGxDa30BDbhDXFSkDOzFwUi0k72HKGo7kyE27bHYIzQvxBRdDtCiXaQWEIxIWORNyfUVxMtDGJ3EL2BSnA9jLQm0H3rZl5JmHOEhwUglCbkQNzsJbsJn8Y-b2jMZGTOOS2r7i4PE-j5SwyfsckcwKBsT7oTF4R943MeYWDI93BOVI_AKLnDAloBiJJTCdXxiNkG4hWdcjJGMUdQ-_qM5MV9wzsb2ffbEzzrx3mz4pXcq_WQ8_cd6y6SjtiRKyP7A\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login/google",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login",
+						"google"
+					]
+				},
+				"description": "trae por get los usuarios y por Post crear usuarios."
+			},
+			"response": []
+		},
+		{
 			"name": "Busqueda total",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true

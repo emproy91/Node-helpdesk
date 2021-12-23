@@ -21,6 +21,9 @@ const { dbConnection } = require('./database/config')
  // Base de datos.
  dbConnection();
 
+ // Directorio público
+ app.use( express.static('public') );
+
   // console.log( process.env );
 
  // Rutas.
