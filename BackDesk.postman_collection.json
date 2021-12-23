@@ -182,6 +182,46 @@
 			"response": []
 		},
 		{
+			"name": "Renew Token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE4MDEwMTA5MTE1ZmIyNzdlODUzODYiLCJpYXQiOjE2NDAyMzI5MDIsImV4cCI6MTY0MDI3NjEwMn0.mp1QJztftRzv3an_-kQCxIDjLKLKyC96skcqF19A3l0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login/renew",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login",
+						"renew"
+					]
+				},
+				"description": "trae por get los usuarios y por Post crear usuarios."
+			},
+			"response": []
+		},
+		{
 			"name": "Login Google",
 			"request": {
 				"method": "POST",
@@ -438,7 +478,7 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE4MDEwMTA5MTE1ZmIyNzdlODUzODYiLCJpYXQiOjE2Mzg1NjU1MjQsImV4cCI6MTYzODYwODcyNH0.XQ-J_-48dD3kH7ketK_obnOnuYs-pDo15-g1yrz-_tU",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE4MDEwMTA5MTE1ZmIyNzdlODUzODYiLCJpYXQiOjE2NDAyMzI5MDIsImV4cCI6MTY0MDI3NjEwMn0.mp1QJztftRzv3an_-kQCxIDjLKLKyC96skcqF19A3l0",
 						"type": "text"
 					}
 				],
@@ -456,6 +496,98 @@
 					"path": [
 						"api",
 						"contratos"
+					]
+				},
+				"description": "trae por get los usuarios y por Post crear usuarios."
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Contrato",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"host": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE4MDEwMTA5MTE1ZmIyNzdlODUzODYiLCJpYXQiOjE2NDAyMzI5MDIsImV4cCI6MTY0MDI3NjEwMn0.mp1QJztftRzv3an_-kQCxIDjLKLKyC96skcqF19A3l0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/contratos/61c3f90532bfac44599387f8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"contratos",
+						"61c3f90532bfac44599387f8"
+					]
+				},
+				"description": "trae por get los usuarios y por Post crear usuarios."
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Contrato",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"host": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE4MDEwMTA5MTE1ZmIyNzdlODUzODYiLCJpYXQiOjE2NDAyMzI5MDIsImV4cCI6MTY0MDI3NjEwMn0.mp1QJztftRzv3an_-kQCxIDjLKLKyC96skcqF19A3l0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"numero_contrato\": \"2233\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/contratos/61aaafc28227aebed6e74376",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"contratos",
+						"61aaafc28227aebed6e74376"
 					]
 				},
 				"description": "trae por get los usuarios y por Post crear usuarios."
@@ -501,6 +633,98 @@
 					"path": [
 						"api",
 						"equipos"
+					]
+				},
+				"description": "trae por get los usuarios y por Post crear usuarios."
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Equipo",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"host": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE4MDEwMTA5MTE1ZmIyNzdlODUzODYiLCJpYXQiOjE2NDAyNzQxMDQsImV4cCI6MTY0MDMxNzMwNH0.-MnP1c5_S1WMz3a2ivrTff-z_Q_GEiSl06O97C2FU_8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/equipos/61aaf218f484bc483720cb9f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"equipos",
+						"61aaf218f484bc483720cb9f"
+					]
+				},
+				"description": "trae por get los usuarios y por Post crear usuarios."
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Equipo",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"host": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE4MDEwMTA5MTE1ZmIyNzdlODUzODYiLCJpYXQiOjE2NDAyNzQxMDQsImV4cCI6MTY0MDMxNzMwNH0.-MnP1c5_S1WMz3a2ivrTff-z_Q_GEiSl06O97C2FU_8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"torre\",\n    \"contrato\": \"61aaafd58227aebed6e74378\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/equipos/61aaf218f484bc483720cb9f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"equipos",
+						"61aaf218f484bc483720cb9f"
 					]
 				},
 				"description": "trae por get los usuarios y por Post crear usuarios."

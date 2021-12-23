@@ -42,17 +42,82 @@ const crearContrato = async( req, res = response ) => {
     
 }
 
-const actualizarContrato = ( req, response ) => {
-    response.json({
-        ok: true,
-        msg: 'actualizarContrato'
-    })
+const actualizarContrato = async( req, res = response ) => {
+
+    const id  = req.params.id;
+    const uid = req.uid; 
+
+    try {
+
+        const contrato = await Contrato.findById( id );
+
+        if ( !contrato ) {
+            return res.status(400).json({
+                ok: true,
+                msg: 'No se encontró el contrato por ID'
+            });
+        }
+
+        const cambiosContrato = {
+            ...req.body,
+            usuario: uid
+        }
+
+        const contratoActualizado = await Contrato.findByIdAndUpdate( id, cambiosContrato, { new: true } );
+
+        res.json({
+            ok: true,
+            Contrato: contratoActualizado
+        });
+        
+    } catch (error) {
+
+        console.log( error );
+
+        res.status(500).json({
+            ok: false,
+            msg: 'Hable con el administrador'
+        });
+        
+    }
+
+   
 }
 
-const borrarContrato = ( req, response ) => {
-    response.json({
-        ok: true,
-        msg: 'borrarContrato'
-    })
+const borrarContrato = async( req, res = response ) => {
+
+    const id  = req.params.id;
+    // const uid = req.uid; 
+
+    try {
+
+        const contrato = await Contrato.findById( id );
+
+        if ( !contrato ) {
+            return res.status(400).json({
+                ok: true,
+                msg: 'No se encontró el contrato por ID'
+            });
+        }
+
+        await Contrato.findByIdAndDelete( id );
+        
+        res.json({
+            ok: true,
+            msg: 'Contrato Eliminado'
+            // Para no eliminar, mejor desactivar de BD, cambiar propiedad del objeto enla BD "Activo = false".
+        });
+        
+    } catch (error) {
+
+        console.log( error );
+
+        res.status(500).json({
+            ok: false,
+            msg: 'Hable con el administrador'
+        });
+        
+    }
+
 }
 module.exports = { getContratos, crearContrato, actualizarContrato, borrarContrato }

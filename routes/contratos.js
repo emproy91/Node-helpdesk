@@ -18,10 +18,15 @@ router.post( '/',
     crearContrato );
 
 router.put( '/:id',
-    [], 
+    [
+        validarJWT,
+        check('numero_contrato','El numero de contrato es obligatorio').not().isEmpty(),
+        validarCampos
+    ], 
     actualizarContrato );
 
 router.delete( '/:id',
+    validarJWT,
     borrarContrato );
 
 

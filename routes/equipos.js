@@ -19,7 +19,12 @@ router.post( '/',
     crearEquipo );
 
 router.put( '/:id',
-    [], 
+    [
+        validarJWT,
+        check('nombre','El nombre del equipo es obligatorio').not().isEmpty(),
+        check('contrato','El numero de contrato es obligatorio').isMongoId(),
+        validarCampos
+    ], 
     actualizarEquipo );
 
 router.delete( '/:id',

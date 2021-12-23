@@ -61,17 +61,78 @@ const crearEquipo = async( req, res = response ) => {
 
 }
 
-const actualizarEquipo = ( req, response ) => {
-    res.json({
-        ok: true,
-        msg: 'actualizarEquipo'
-    });
+const actualizarEquipo = async( req, res = response ) => {
+    
+    const id  = req.params.id;
+    const uid = req.uid; 
+
+    try {
+
+        const equipo = await Equipo.findById( id );
+
+        if ( !equipo ) {
+            return res.status(400).json({
+                ok: true,
+                msg: 'No se encontró el equipo por ID'
+            });
+        }
+
+        const cambiosEquipo = {
+            ...req.body,
+            usuario: uid
+        }
+
+        const equipoActualizado = await Equipo.findByIdAndUpdate( id, cambiosEquipo, { new: true } );
+
+        res.json({
+            ok: true,
+            Equipo: equipoActualizado
+        });
+        
+    } catch (error) {
+
+        console.log( error );
+
+        res.status(500).json({
+            ok: false,
+            msg: 'Hable con el administrador'
+        });
+        
+    }
 }
 
-const borrarEquipo = ( req, response ) => {
-    res.json({
-        ok: true,
-        msg: 'borrarEquipo'
-    });
+const borrarEquipo = async( req, res = response ) => {
+    
+    const id  = req.params.id;
+    // const uid = req.uid;
+
+    try {
+
+        const equipo = await Equipo.findById( id );
+
+        if ( !equipo ) {
+            return res.status(400).json({
+                ok: true,
+                msg: 'No se encontró el equipo por ID'
+            });
+        }
+
+        await Equipo.findByIdAndDelete( id );
+
+        res.json({
+            ok: true,
+            msg: 'Equipo borrado'
+        });
+        
+    } catch (error) {
+
+        console.log( error );
+
+        res.status(500).json({
+            ok: false,
+            msg: 'Hable con el administrador'
+        });
+        
+    }
 }
 module.exports = { getEquipos, crearEquipo, actualizarEquipo, borrarEquipo }
